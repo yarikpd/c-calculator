@@ -32,6 +32,7 @@ int main() {
                 break;
             default:
                 if (!RPN::in_operations(op)) {
+                    std::cerr << "Error: Unknown operator '" << op << "'" << std::endl;
                     std::cout << "Invalid operation." << std::endl;
                     break;
                 }
