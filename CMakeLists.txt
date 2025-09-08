@@ -9,7 +9,9 @@ add_subdirectory(tests)
 
 include_directories(include)
 add_executable(rpn_calculator
-    src/main.cpp
-    include/rpn.h
-    src/rpn.cpp
+        src/main.cpp
+        include/rpn.h
+        src/rpn.cpp
+        include/history.h
+        src/history.cpp
 )
