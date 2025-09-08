@@ -13,7 +13,10 @@ int main() {
     History history;
 
     while (running) {
-        std::cout << "Enter operation (+, -, *, /) or ('e' to exit, 'h' for history, 'c' to clear history): ";
+        std::cout << "Enter operation (";
+        RPN::print_operations(", ");
+        std::cout << ") or ('e' to exit, 'h' for history, 'c' to clear history): ";
+
         std::cin >> op;
 
         switch (op) {
@@ -28,10 +31,15 @@ int main() {
                 std::cout << "History cleared." << std::endl;
                 break;
             default:
+                if (!RPN::in_operations(op)) {
+                    std::cout << "Invalid operation." << std::endl;
+                    break;
+                }
+
                 std::cout << "Enter a, b: ";
                 std::cin >> a >> b;
 
-                if (const double result = evaluate_rpn(a, b, op); (op == '/' && b == 0) || (result == 0 && op != '+' && op != '-' && op != '*' && op != '/')) {
+                if (const double result = RPN::evaluate_rpn(a, b, op); (result == 0 && op == '/' && b == 0)) {
                     std::cout << "Calculation error occurred." << std::endl;
                 } else {
                     std::sprintf(output, "%.2g %c %.2g = %.2g", a, op, b, result);
