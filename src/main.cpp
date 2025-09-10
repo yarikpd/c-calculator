@@ -13,10 +13,7 @@ int main() {
     History history;
 
     while (running) {
-        std::cout << "Enter operation (";
-        RPN::print_operations(", ");
-        std::cout << ") or ('e' to exit, 'h' for history, 'c' to clear history): ";
-
+        std::cout << "Enter operation ('e' to exit, 'h' for history, 'c' to clear history, 'o' to do operations, 'r' to do RPN operation): ";
         std::cin >> op;
 
         switch (op) {
@@ -30,7 +27,12 @@ int main() {
                 history.clear();
                 std::cout << "History cleared." << std::endl;
                 break;
-            default:
+            case 'o':
+                std::cout << "Enter operation (";
+                RPN::print_operations(", ");
+                std::cout << ")";
+                std::cin >> op;
+
                 if (!RPN::in_operations(op)) {
                     std::cerr << "Error: Unknown operator '" << op << "'" << std::endl;
                     std::cout << "Invalid operation." << std::endl;
@@ -47,6 +49,25 @@ int main() {
                     std::cout << output << std::endl;
                     history.add(output);
                 }
+                break;
+            case 'r':
+                std::cout << "Enter RPN expression: ";
+                char expr[256];
+                std::cin.ignore(); // clear newline
+                std::cin.getline(expr, 256);
+
+                double result;
+                if (RPN::evaluate_rpn_expr(expr, result)) {
+                    std::sprintf(output, "%s = %.2g", expr, result);
+                    std::cout << output << std::endl;
+                    history.add(output);
+                }
+
+                break;
+            default:
+                std::cerr << "Error: Unknown operator '" << op << "'" << std::endl;
+                std::cout << "Invalid operation." << std::endl;
+                break;
         }
 
         std::cout << "----------" << std::endl;

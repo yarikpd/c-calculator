@@ -12,6 +12,7 @@ public:
 
     static bool in_operations(char op);
     static double evaluate_rpn(double a, double b, char op);
+    static bool evaluate_rpn_expr(const char* expr, double& result);
 };
 
 #endif
