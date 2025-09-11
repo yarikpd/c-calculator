@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdio>
+#include <cstring>
 
 #include "history.h"
 #include "rpn.h"
@@ -57,8 +58,10 @@ int main() {
                 std::cin.getline(expr, 256);
 
                 double result;
-                if (RPN::evaluate_rpn_expr(expr, result)) {
-                    std::sprintf(output, "%s = %.2g", expr, result);
+                char infix[512];
+                if (RPN::evaluate_rpn_expr(expr, result, infix, sizeof(infix))) {
+
+                    std::sprintf(output, "%s %s = %.2g", expr, infix, result);
                     std::cout << output << std::endl;
                     history.add(output);
                 }
