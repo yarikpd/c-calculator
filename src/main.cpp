@@ -8,7 +8,7 @@
 int main() {
     double a, b;
     char op;
-    char output[100];
+    char output[350];
     bool running = true;
 
     History history;
@@ -53,13 +53,12 @@ int main() {
                 break;
             case 'r':
                 std::cout << "Enter RPN expression: ";
-                char expr[256];
+                char expr[100];
                 std::cin.ignore(); // clear newline
                 std::cin.getline(expr, 256);
 
-                double result;
-                char infix[512];
-                if (RPN::evaluate_rpn_expr(expr, result, infix, sizeof(infix))) {
+                char infix[200];
+                if (double result; RPN::evaluate_rpn_expr(expr, result, infix, sizeof(infix))) {
 
                     std::sprintf(output, "%s %s = %.2g", expr, infix, result);
                     std::cout << output << std::endl;

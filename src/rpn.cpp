@@ -93,11 +93,11 @@ bool RPN::evaluate_rpn_expr(const char* expr, double& result, char* infix_buf, s
                 numbuf[j++] = expr[i++];
             }
             numbuf[j] = '\0';
-            stack[++top] = std::atof(numbuf);
+            stack[++top] = std::stod(numbuf);
         } else {
             if (top < 1) return false;
-            double b = stack[top--];
-            double a = stack[top--];
+            const double b = stack[top--];
+            const double a = stack[top--];
             double res = 0;
 
             switch (expr[i]) {
@@ -120,8 +120,7 @@ bool RPN::evaluate_rpn_expr(const char* expr, double& result, char* infix_buf, s
                 default: return false;
             }
 
-            bool done = decode(infix_buf, infix_buf_size, a, b, expr[i]);
-            if (!done) return false;
+            if (const bool done = decode(infix_buf, infix_buf_size, a, b, expr[i]); !done) return false;
 
             stack[++top] = res;
             ++i;
