@@ -60,7 +60,7 @@ int main() {
                 char infix[200];
                 if (double result; RPN::evaluate_rpn_expr(expr, result, infix, sizeof(infix))) {
 
-                    std::sprintf(output, "%s %s = %.2g", expr, infix, result);
+                    std::sprintf(output, "%s %s = %.3g", expr, infix, result);
                     std::cout << output << std::endl;
                     history.add(output);
                 }

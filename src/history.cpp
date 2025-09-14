@@ -36,8 +36,10 @@ void History::add(const char output[]) {
 }
 
 void History::print() const {
+    int i = 1;
     for (const char* entry : history) {
-        std::cout << entry << std::endl;
+        std::cout << i << ") " << entry << std::endl;
+        ++i;
     }
 }
 
