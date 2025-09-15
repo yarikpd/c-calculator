@@ -1,0 +1,24 @@
+\doxysection{rpn.\+h}
+\hypertarget{rpn_8h_source}{}\label{rpn_8h_source}\index{include/rpn.h@{include/rpn.h}}
+\mbox{\hyperlink{rpn_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RPN\_CALCULATOR\_RPN\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RPN\_CALCULATOR\_RPN\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPN}{RPN}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ operations[5]\ =\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{charliteral}{'+'},\ \textcolor{charliteral}{'-\/'},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'/'},\ \textcolor{charliteral}{'\string^'}}
+\DoxyCodeLine{00014\ \ \ \ \ \};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ count\_operations\ =\ \textcolor{keyword}{sizeof}(operations)\ /\ \textcolor{keyword}{sizeof}(operations[0]);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRPN_a48a0660d779de1f8a770f715cb226d9d}{print\_operations}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ separator[]\ =\ \textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRPN_adb84117d06ea132f3ba5ce2740ed4e64}{in\_operations}}(\textcolor{keywordtype}{char}\ op);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classRPN_a1bc184a4722f59d573b336f9e3ea04da}{evaluate\_rpn}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ rpn);}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

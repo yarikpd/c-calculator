@@ -1,0 +1,33 @@
+\doxysection{history.\+h}
+\hypertarget{history_8h_source}{}\label{history_8h_source}\index{include/history.h@{include/history.h}}
+\mbox{\hyperlink{history_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RPN\_CALCULATOR\_HISTORY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RPN\_CALCULATOR\_HISTORY\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHistory}{History}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ OUTPUT\_SIZE\ =\ 100;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ max\_size\ =\ 10;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ current\_size\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ \ \ std::list<char*>\ history;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classHistory_a5b00b64a1ddee04e60d5a3b517fd6d4c}{\string~History}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classHistory_aa8789abb57a0d0069866b8bd1fd1a65b}{get\_max\_size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHistory_aff226806094161395d23c3599f0d78c5}{set\_max\_size}}(\textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHistory_a3328eca90bef5aebae790a7604e88522}{add}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ output[]);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHistory_addd73110f562de7e6bbcb266f0d59f49}{print}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHistory_a8ef13fdf00ec0786268fd6bd211bf38f}{clear}}();}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RPN\_CALCULATOR\_HISTORY\_H}}
+
+\end{DoxyCode}
