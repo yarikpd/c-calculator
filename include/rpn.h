@@ -11,7 +11,7 @@ public:
     static void print_operations(const char separator[] = " ");
 
     static bool in_operations(char op);
-    static bool evaluate_rpn(const char* rpn);
+    static double evaluate_rpn(const char* rpn);
 };
 
 #endif

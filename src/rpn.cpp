@@ -31,7 +31,7 @@ bool has_operation(const char* expr) {
     return false;
 }
 
-bool RPN::evaluate_rpn(const char* expr) {
+double RPN::evaluate_rpn(const char* expr) {
     double stack[32];
     int top = -1;
     int i = 0;
@@ -89,5 +89,5 @@ bool RPN::evaluate_rpn(const char* expr) {
     }
 
     std::cout << stack[top] << std::endl;
-    return true;
+    return stack[top];
 }
