@@ -1,6 +1,5 @@
 #ifndef RPN_CALCULATOR_RPN_H
 #define RPN_CALCULATOR_RPN_H
-#include <cstddef>
 
 class RPN {
     const char operations[5] = {
@@ -12,11 +11,7 @@ public:
     static void print_operations(const char separator[] = " ");
 
     static bool in_operations(char op);
-    static double evaluate_rpn(double a, double b, char op);
-    static bool evaluate_rpn_expr(const char* rpn,
-                           double& result,
-                           char* infix_buf,
-                           std::size_t infix_buf_size);
+    static bool evaluate_rpn(const char* rpn);
 };
 
 #endif

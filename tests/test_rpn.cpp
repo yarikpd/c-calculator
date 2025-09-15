@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "rpn.h"
 #include <stdexcept>
+
 TEST(RPNTest, BasicAddition) {
     EXPECT_DOUBLE_EQ(RPN::evaluate_rpn("2 3 +"), 5.0);
 }
