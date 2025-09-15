@@ -88,6 +88,5 @@ double RPN::evaluate_rpn(const char* expr) {
         throw std::invalid_argument("Invalid RPN expression");
     }
 
-    std::cout << stack[top] << std::endl;
     return stack[top];
 }
