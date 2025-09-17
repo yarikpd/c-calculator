@@ -38,10 +38,25 @@ double RPN::evaluate_rpn(const char* expr) {
     while (expr[i]) {
         while (expr[i] == ' ') ++i;
         if (!expr[i]) {
-            throw std::invalid_argument("Invalid expression");
+            break;  // End of expression
         }
 
-        if ((expr[i] >= '0' && expr[i] <= '9') || expr[i] == '.') {
+        // Handle negative numbers
+        if (expr[i] == '-' && (i == 0 || expr[i-1] == ' ') &&
+            (expr[i+1] >= '0' && expr[i+1] <= '9')) {
+            char numbuf[32];
+            int j = 0;
+            numbuf[j++] = expr[i++];  // Add the negative sign
+
+            // Add digits and decimal point
+            while ((expr[i] >= '0' && expr[i] <= '9') || expr[i] == '.') {
+                numbuf[j++] = expr[i++];
+            }
+            numbuf[j] = '\0';
+            stack[++top] = std::stod(numbuf);
+        }
+        // Handle positive numbers
+        else if ((expr[i] >= '0' && expr[i] <= '9') || expr[i] == '.') {
             char numbuf[32];
             int j = 0;
             while ((expr[i] >= '0' && expr[i] <= '9') || expr[i] == '.') {
@@ -50,6 +65,7 @@ double RPN::evaluate_rpn(const char* expr) {
             numbuf[j] = '\0';
             stack[++top] = std::stod(numbuf);
         } else {
+            // Handle operations
             if (expr[i] == 'f' || expr[i] == 'c' || expr[i] == 'r') {
                 if (top < 0) {
                     throw std::invalid_argument("RPN stack underflow");
@@ -72,7 +88,7 @@ double RPN::evaluate_rpn(const char* expr) {
                 stack[++top] = res;
                 ++i;
             } else {
-                // Handle binary operations
+                // Binary operations
                 if (top < 1) {
                     throw std::invalid_argument("RPN stack underflow");
                 }
@@ -108,6 +124,7 @@ double RPN::evaluate_rpn(const char* expr) {
             }
         }
     }
+
     if (top != 0) {
         throw std::invalid_argument("Invalid RPN expression");
     }
