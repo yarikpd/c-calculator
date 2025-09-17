@@ -29,12 +29,14 @@ void \mbox{\hyperlink{classHistory_a8ef13fdf00ec0786268fd6bd211bf38f}{clear}} ()
 \doxysubsection{Detailed Description}
 Manages a history of output strings for an \doxylink{classRPN}{RPN} calculator. 
 
+\label{doc-constructors}
+\Hypertarget{classHistory_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classHistory_a5b00b64a1ddee04e60d5a3b517fd6d4c}\label{classHistory_a5b00b64a1ddee04e60d5a3b517fd6d4c} 
-\index{History@{History}!````~History@{\texorpdfstring{$\sim$}{\string~}History}}
+\Hypertarget{classHistory_a5b00b64a1ddee04e60d5a3b517fd6d4c}\index{History@{History}!````~History@{\texorpdfstring{$\sim$}{\string~}History}}
 \index{````~History@{\texorpdfstring{$\sim$}{\string~}History}!History@{History}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}History()}{\string~History()}}
-{\footnotesize\ttfamily History\+::\texorpdfstring{$\sim$}{\string~}\+History (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classHistory_a5b00b64a1ddee04e60d5a3b517fd6d4c} 
+History\+::\texorpdfstring{$\sim$}{\string~}\+History (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -42,12 +44,14 @@ Destructor. Cleans up allocated memory for history entries.
 
 
 
+\label{doc-func-members}
+\Hypertarget{classHistory_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classHistory_a3328eca90bef5aebae790a7604e88522}\label{classHistory_a3328eca90bef5aebae790a7604e88522} 
-\index{History@{History}!add@{add}}
+\Hypertarget{classHistory_a3328eca90bef5aebae790a7604e88522}\index{History@{History}!add@{add}}
 \index{add@{add}!History@{History}}
 \doxysubsubsection{\texorpdfstring{add()}{add()}}
-{\footnotesize\ttfamily void History\+::add (\begin{DoxyParamCaption}\item[{const char}]{output\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classHistory_a3328eca90bef5aebae790a7604e88522} 
+void History\+::add (\begin{DoxyParamCaption}\item[{const char}]{output}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
 
 
 
@@ -60,21 +64,21 @@ Stores the provided output string in the history. If the history exceeds the max
 {\em output} & Output string to add to the history. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classHistory_a8ef13fdf00ec0786268fd6bd211bf38f}\label{classHistory_a8ef13fdf00ec0786268fd6bd211bf38f} 
-\index{History@{History}!clear@{clear}}
+\Hypertarget{classHistory_a8ef13fdf00ec0786268fd6bd211bf38f}\index{History@{History}!clear@{clear}}
 \index{clear@{clear}!History@{History}}
 \doxysubsubsection{\texorpdfstring{clear()}{clear()}}
-{\footnotesize\ttfamily void History\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classHistory_a8ef13fdf00ec0786268fd6bd211bf38f} 
+void History\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
 Clears all history entries. 
 
-Removes all stored output strings from the history and frees associated memory. \Hypertarget{classHistory_aa8789abb57a0d0069866b8bd1fd1a65b}\label{classHistory_aa8789abb57a0d0069866b8bd1fd1a65b} 
-\index{History@{History}!get\_max\_size@{get\_max\_size}}
+Removes all stored output strings from the history and frees associated memory. \Hypertarget{classHistory_aa8789abb57a0d0069866b8bd1fd1a65b}\index{History@{History}!get\_max\_size@{get\_max\_size}}
 \index{get\_max\_size@{get\_max\_size}!History@{History}}
 \doxysubsubsection{\texorpdfstring{get\_max\_size()}{get\_max\_size()}}
-{\footnotesize\ttfamily int History\+::get\+\_\+max\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{classHistory_aa8789abb57a0d0069866b8bd1fd1a65b} 
+int History\+::get\+\_\+max\+\_\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
 
 
@@ -83,21 +87,21 @@ Gets the maximum number of history entries.
 \begin{DoxyReturn}{Returns}
 Maximum size of the history. 
 \end{DoxyReturn}
-\Hypertarget{classHistory_addd73110f562de7e6bbcb266f0d59f49}\label{classHistory_addd73110f562de7e6bbcb266f0d59f49} 
-\index{History@{History}!print@{print}}
+\Hypertarget{classHistory_addd73110f562de7e6bbcb266f0d59f49}\index{History@{History}!print@{print}}
 \index{print@{print}!History@{History}}
 \doxysubsubsection{\texorpdfstring{print()}{print()}}
-{\footnotesize\ttfamily void History\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{classHistory_addd73110f562de7e6bbcb266f0d59f49} 
+void History\+::print (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
 
 
 Prints all history entries to the standard output. 
 
-Iterates through the stored history and outputs each entry. \Hypertarget{classHistory_aff226806094161395d23c3599f0d78c5}\label{classHistory_aff226806094161395d23c3599f0d78c5} 
-\index{History@{History}!set\_max\_size@{set\_max\_size}}
+Iterates through the stored history and outputs each entry. \Hypertarget{classHistory_aff226806094161395d23c3599f0d78c5}\index{History@{History}!set\_max\_size@{set\_max\_size}}
 \index{set\_max\_size@{set\_max\_size}!History@{History}}
 \doxysubsubsection{\texorpdfstring{set\_max\_size()}{set\_max\_size()}}
-{\footnotesize\ttfamily void History\+::set\+\_\+max\+\_\+size (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classHistory_aff226806094161395d23c3599f0d78c5} 
+void History\+::set\+\_\+max\+\_\+size (\begin{DoxyParamCaption}\item[{int}]{size}{}\end{DoxyParamCaption})}
 
 
 
