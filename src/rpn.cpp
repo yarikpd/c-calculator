@@ -50,38 +50,62 @@ double RPN::evaluate_rpn(const char* expr) {
             numbuf[j] = '\0';
             stack[++top] = std::stod(numbuf);
         } else {
-            if (top < 1) {
-                throw std::invalid_argument("RPN stack underflow");
-            }
-            const double b = stack[top--];
-            const double a = stack[top--];
-            double res = 0;
+            if (expr[i] == 'f' || expr[i] == 'c' || expr[i] == 'r') {
+                if (top < 0) {
+                    throw std::invalid_argument("RPN stack underflow");
+                }
+                double a = stack[top--];
+                double res = 0;
 
-            switch (expr[i]) {
-                case '+':
-                    res = a + b;
-                    break;
-                case '-':
-                    res = a - b;
-                    break;
-                case '*':
-                    res = a * b;
-                    break;
-                case '/':
-                    if (b == 0) {
-                        throw std::invalid_argument("Division by zero");
-                    }
-                    res = a / b;
-                    break;
-                case '^':
-                    res = pow(a, b);
-                    break;
-                default:
-                    throw std::invalid_argument("Invalid operator");
-            }
+                switch (expr[i]) {
+                    case 'f':
+                        res = std::floor(a);
+                        break;
+                    case 'c':
+                        res = std::ceil(a);
+                        break;
+                    case 'r':
+                        res = std::round(a);
+                        break;
+                }
 
-            stack[++top] = res;
-            ++i;
+                stack[++top] = res;
+                ++i;
+            } else {
+                // Handle binary operations
+                if (top < 1) {
+                    throw std::invalid_argument("RPN stack underflow");
+                }
+                const double b = stack[top--];
+                const double a = stack[top--];
+                double res = 0;
+
+                switch (expr[i]) {
+                    case '+':
+                        res = a + b;
+                        break;
+                    case '-':
+                        res = a - b;
+                        break;
+                    case '*':
+                        res = a * b;
+                        break;
+                    case '/':
+                        if (b == 0) {
+                            throw std::invalid_argument("Division by zero");
+                        }
+                        res = a / b;
+                        break;
+                    case '^':
+                        res = pow(a, b);
+                        break;
+                    default:
+                        throw std::invalid_argument("Invalid operator");
+                }
+
+                stack[++top] = res;
+                ++i;
+            }
         }
     }
     if (top != 0) {

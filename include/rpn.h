@@ -9,8 +9,8 @@
  * and evaluate RPN expressions. It is designed for use in an RPN calculator.
  */
 class RPN {
-    const char operations[5] = {
-        '+', '-', '*', '/', '^'
+    const char operations[8] = {
+        '+', '-', '*', '/', '^', 'f', 'c', 'r'
     };
     const int count_operations = sizeof(operations) / sizeof(operations[0]);
 
